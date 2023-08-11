@@ -19,9 +19,14 @@ public class SpawnNet : NetworkBehaviour
         {
             if (Input.GetKeyDown("space"))
             {
-                GameObject go = Instantiate(myPrefab, transform.position + Vector3.down * 2, Quaternion.identity);
-                go.GetComponent<NetworkObject>().Spawn();
+                Spawn_ServerRpc();
             }
         }
+    }
+    [ServerRpc]
+    public void Spawn_ServerRpc(ServerRpcParams serverRpcParams = default)
+    {
+        GameObject go = Instantiate(myPrefab, transform.position + Vector3.down * 2, Quaternion.identity);
+        go.GetComponent<NetworkObject>().Spawn();
     }
 }

@@ -128,5 +128,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myPrefab: {fileID: 2607180318626717569}
-  PrefabToSpawn: {fileID: 2607180318626717569}
+  PrefabToSpawn: {fileID: 0}
   DestroyWithSpawner: 0
